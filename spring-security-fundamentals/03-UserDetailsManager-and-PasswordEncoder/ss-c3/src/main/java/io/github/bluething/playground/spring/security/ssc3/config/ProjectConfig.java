@@ -3,18 +3,19 @@ package io.github.bluething.playground.spring.security.ssc3.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.JdbcUserDetailsManager;
 
 import javax.sql.DataSource;
 
 @Configuration
-public class ProjectConfig {
+public class ProjectConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
-    public UserDetailsService userDetailsService() {
+    public JdbcUserDetailsManager userDetailsService() {
         return new JdbcUserDetailsManager(dataSource());
     }
 
@@ -30,6 +31,17 @@ public class ProjectConfig {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        return NoOpPasswordEncoder.getInstance();
+        return new BCryptPasswordEncoder();
+    }
+
+    @Override
+    protected void configure(HttpSecurity httpSecurity) throws Exception {
+        httpSecurity.httpBasic();
+
+        httpSecurity.csrf().disable(); // CSRF tokens ...
+
+        httpSecurity.authorizeRequests()
+                .mvcMatchers("/user").permitAll()
+                .anyRequest().authenticated();
     }
 }
