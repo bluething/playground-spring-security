@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/spring-framework-security-oauth2-login/intro-oauth2-openid/crypto-portfolio-01/pom.xml" />
         <option value="$PROJECT_DIR$/spring-security-fundamentals/01-basic-contracts-in-spring-security-architecture/ss-c1/pom.xml" />
         <option value="$PROJECT_DIR$/spring-security-fundamentals/02-Implementing-the-UserDetailsService/ss-c2/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-security-fundamentals/03-UserDetailsManager-and-PasswordEncoder/ss-c3/pom.xml" />
       </list>
     </option>
   </component>

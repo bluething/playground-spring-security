@@ -4,5 +4,6 @@
     <file url="file://$PROJECT_DIR$/spring-framework-security-oauth2-login/intro-oauth2-openid/crypto-portfolio-01/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-security-fundamentals/01-basic-contracts-in-spring-security-architecture/ss-c1/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-security-fundamentals/02-Implementing-the-UserDetailsService/ss-c2/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/spring-security-fundamentals/03-UserDetailsManager-and-PasswordEncoder/ss-c3/src/main/java" charset="UTF-8" />
   </component>
 </project>
