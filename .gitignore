@@ -197,3 +197,8 @@ gradle-app.setting
 **/build/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,linux,intellij,java,java-web,gradle
+
+# I ignore this file to avoid unexpected merge
+.idea/misc.xml
+.idea/sonarlint-state.xml
+.idea/sonarlint.xml
